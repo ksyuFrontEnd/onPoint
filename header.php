@@ -10,7 +10,7 @@
 <body>
     <div class="wrapper">
         <header class="header">
-            <div class="header__container">
+            <div class="header__container container">
                 <div class="logo">
                     <?php 
                     if ( has_custom_logo() ) : ?>

@@ -1,24 +1,24 @@
 <?php get_header(); ?>
 
-<main class="front-page">
+<main class="main">
     <!-- Section with last 3 posts -->
-    <section class="last-posts-section section">
+    <section class="last-posts-section section" id="latest">
         <div class="container">
-            <p>hello</p>
+            <p>latest</p>
         </div>
     </section>
 
     <!--Section with 3 most popular posts   -->
-    <section class="popular-posts-section section">
+    <section class="popular-posts-section section" id="popular">
         <div class="container">
-            <p>hello</p>
+            <p>popular</p>
         </div>
     </section>
 
     <!-- Section with contact form -->
-    <section class="contact-form-section section">
+    <section class="contact-form-section section" id="contact-us">
         <div class="container">
-            <p>hello</p>
+            <p>contact us</p>
         </div>
     </section>
     
