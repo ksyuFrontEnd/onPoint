@@ -26,7 +26,6 @@ function onpoint_scripts() {
     wp_enqueue_style( 'main', get_stylesheet_uri () );
     wp_enqueue_style( 'onpoint-style', get_template_directory_uri() . '/assets/css/front-page.css', array('main') );
     wp_enqueue_script( 'onpoint-scripts', get_template_directory_uri() . '/assets/js/front-page.js', array(), false, true );
-    wp_enqueue_script( 'home-scripts', get_template_directory_uri() . '/assets/js/home.js', array(), false, true );
     wp_enqueue_script( 'header-scripts', get_template_directory_uri() . '/assets/js/header.js', array(), false, true );
     wp_enqueue_script( 'footer-scripts', get_template_directory_uri() . '/assets/js/footer.js', array(), false, true );
     wp_enqueue_style(  'google_web_fonts', 'https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap', [], null );
@@ -61,7 +60,7 @@ add_action( 'init', 'onpoint_menus' );
 /* Limit content in popular posts to 100 characters and add 'Read more' */
 function limit_popular_post_content( $content ) {
 
-    if( is_home() ) {
+    if( is_front_page() ) {
 
         $char_limit = 100;
         $post_link = get_permalink();

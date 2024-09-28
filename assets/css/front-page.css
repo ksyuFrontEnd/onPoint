@@ -3,6 +3,10 @@
 @import './footer.css';
 @import './home.css';
 
+.main {
+    flex: 1 1 auto;
+}
+
 .section {
     padding: 32px 0;
 }
@@ -17,8 +21,19 @@
     padding: 0 16px;
 }
 
-.main {
-    flex: 1 1 auto;
+.latest {
+    margin: 30px auto;  
+}
+
+.popular {
+    margin: 0 auto 30px;
+}
+
+.latest-posts, .popular-posts {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 2px;
 }
 
 @media screen and (min-width: 768px) {
@@ -33,6 +48,12 @@
     .container {
         max-width: 1440px;
         padding: 0 32px;
+    }
+
+    .latest-posts, .popular-posts {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 }
 
