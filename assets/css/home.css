@@ -1,0 +1,10 @@
+.latest{
+    margin: 30px auto;  
+}
+
+.latest-post {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 2px;
+}
