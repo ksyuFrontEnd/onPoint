@@ -33,7 +33,7 @@
             <article class="popular">
                 <?php if( have_posts() ) : ?>
 
-                        <div class="popular-posts"></div>
+                        <div class="popular-posts">
 
                             <?php while( have_posts() ) : the_post(); ?>
 

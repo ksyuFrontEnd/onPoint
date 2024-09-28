@@ -1,0 +1,43 @@
+.popular-post__card {
+    padding: 15px 20px;
+    border-radius: 10px;
+    background-color: #F0E8E7;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.popular-post__card:last-child {
+    margin-bottom: 0;
+}
+
+.popular-post__title {
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.popular-post__views-number {
+    font-style: italic;
+}
+
+.popular-post__excerpt {
+    font-size: 12px;
+    line-height: 1;
+    color: red;
+}
+
+.popular-post__link-text {
+    color: green;
+}
+
+@media screen and (min-width: 768px) {
+    .popular-post__card {
+        max-width: calc((100% - 20px) / 2);
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .popular-post__card {
+        max-width: calc((100% - 20px * 2) / 3);
+    }
+}

@@ -1,8 +1,9 @@
-.latest{
+/* Latest posts */
+.latest {
     margin: 30px auto;  
 }
 
-.latest-posts {
+.latest-posts, .popular-posts {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -10,9 +11,14 @@
 }
 
 @media screen and (min-width: 768px)  {
-    .latest-posts {
+    .latest-posts, .popular-posts {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
     }
+}
+
+/* Popular posts */
+.popular {
+    margin: 0 auto 30px;
 }

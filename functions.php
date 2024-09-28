@@ -43,6 +43,9 @@ function onpoint_scripts() {
 
 add_action( 'wp_enqueue_scripts', 'onpoint_scripts' );
 
+/* Enqueue customizer */
+require_once( get_template_directory () . '/incs/customizer.php' );
+
 /* Register menus */
 function onpoint_menus() {
     $locations = array(
@@ -55,5 +58,16 @@ function onpoint_menus() {
 
 add_action( 'init', 'onpoint_menus' );
 
-/* Enqueue customizer */
-require_once( get_template_directory () . '/incs/customizer.php' );
+/* Limit content in popular posts to 100 characters */
+function limit_popular_post_content( $content ) {
+
+    if( is_home() ) {
+        $char_limit = 100;
+        if( strlen($content) > $char_limit ) {
+            return substr( $content, 0, $char_limit ) . '...';
+        }
+    }
+    return $content;
+}
+
+add_filter( 'the_content', 'limit_popular_post_content' );
