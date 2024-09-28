@@ -82,7 +82,10 @@
 <!-- Section with contact form -->
     <section class="contact-form-section section" id="contact-us">
         <div class="container">
-            <p>contact us</p>
+            <form id="contact-form">
+                <input type="email" id="email" name="email" required placeholder="Your email">
+                <button type="submit">Submit</button>
+            </form>
         </div>
     </section>
 

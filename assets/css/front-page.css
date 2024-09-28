@@ -1,7 +1,6 @@
 @import './general.css';
 @import './header.css';
 @import './footer.css';
-@import './home.css';
 
 .main {
     flex: 1 1 auto;
