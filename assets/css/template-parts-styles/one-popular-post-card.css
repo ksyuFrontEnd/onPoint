@@ -20,10 +20,9 @@
     font-style: italic;
 }
 
-.popular-post__excerpt {
+.popular-post__limited-content{
     font-size: 12px;
     line-height: 1;
-    color: red;
 }
 
 .popular-post__link-text {

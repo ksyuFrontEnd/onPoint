@@ -58,13 +58,19 @@ function onpoint_menus() {
 
 add_action( 'init', 'onpoint_menus' );
 
-/* Limit content in popular posts to 100 characters */
+/* Limit content in popular posts to 100 characters and add 'Read more' */
 function limit_popular_post_content( $content ) {
 
     if( is_home() ) {
+
         $char_limit = 100;
+        $post_link = get_permalink();
+
         if( strlen($content) > $char_limit ) {
-            return substr( $content, 0, $char_limit ) . '...';
+
+            $content = substr( $content, 0, $char_limit ) . '...';
+            $content .= '<a href="' . $post_link . '">Read more</a>';
+
         }
     }
     return $content;
