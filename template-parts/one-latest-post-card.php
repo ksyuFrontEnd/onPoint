@@ -15,7 +15,7 @@
     <?php endif; ?>
 
     <div class="latest-post__info">
-        <p class="latest-post__author"><?php the_author(); ?></p>
+        <p class="latest-post__author"><?php the_author_meta('first_name'); ?> <?php the_author_meta('last_name'); ?></p>
         <p class="latest-post__date"><?php the_time('j F Y'); ?></p>
     </div>
 

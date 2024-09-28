@@ -8,7 +8,7 @@
             <article class="latest">
                 <?php if( have_posts() ) : ?>
         
-                    <div class="latest-post">
+                    <div class="latest-posts">
 
                         <?php while( have_posts() ) : the_post(); ?>
 
@@ -30,7 +30,22 @@
     <section class="popular-posts-section section" id="popular">
         <div class="container">
 
-            <?php get_template_part( 'template-parts/one-popular-post-card' ); ?>
+            <article class="popular">
+                <?php if( have_posts() ) : ?>
+
+                        <div class="popular-posts"></div>
+
+                            <?php while( have_posts() ) : the_post(); ?>
+
+                                <?php get_template_part( 'template-parts/one-popular-post-card' ); ?>
+
+                            <?php endwhile; else : ?>
+
+                                <p>No posts.</p>
+                        </div>
+                
+                <?php endif; ?>
+            </article>   
     
         </div>
     </section>
