@@ -21,12 +21,8 @@
 }
 
 .popular-post__limited-content{
-    font-size: 12px;
+    font-size: 14px;
     line-height: 1;
-}
-
-.popular-post__link-text {
-    color: green;
 }
 
 @media screen and (min-width: 768px) {

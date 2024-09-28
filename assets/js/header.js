@@ -18,23 +18,3 @@ menuLinks.forEach(link => {
         menuBody.classList.remove('_active');
     });
 });
-
-// Add class active to active button
-const menuItems = document. querySelectorAll(".menu-item");
-const menuItemHome = document.querySelector(".menu-item-home")
-
-function setActiveBtnInHeader(activeBtnInHeader) {
-    menuItems.forEach(menuItem => {
-        menuItem.classList.remove('active');
-    });
-
-    activeBtnInHeader.classList.add('active');
-}
-
-setActiveBtnInHeader(menuItemHome);
-
-menuItems.forEach(menuItem => {
-    menuItem.addEventListener('click', () => {
-        setActiveBtnInHeader(menuItem)
-    }); 
-});

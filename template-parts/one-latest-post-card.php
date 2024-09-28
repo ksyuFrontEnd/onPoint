@@ -22,5 +22,6 @@
     <a href="<?php the_permalink(); ?>">
         <h3 class="latest-post__title"><?php the_title(); ?></h3>
     </a>
+    
 </div>
                           

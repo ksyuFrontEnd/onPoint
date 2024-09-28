@@ -6,6 +6,7 @@
         <div class="container">
 
             <article class="latest">
+
                 <?php if( have_posts() ) : ?>
         
                     <div class="latest-posts">
@@ -21,30 +22,48 @@
                     </div>
 
                 <?php endif; ?>
+
             </article>
 
         </div>
-    </section> 
+    </section>        
 
-<!-- Section with 3 most popular posts   -->
+    <!-- Section with 3 most popular posts   -->
     <section class="popular-posts-section section" id="popular">
         <div class="container">
 
             <article class="popular">
-                <?php if( have_posts() ) : ?>
 
-                        <div class="popular-posts">
+                <?php
 
-                            <?php while( have_posts() ) : the_post(); ?>
+                $args = array(
+                    'posts_per_page' => 3,
+                    'meta_key' => 'post_views_count',
+                    'orderby' => 'meta_value_num',
+                    'order' => 'DESC',
+                    'post_type' => 'post',
+                    'post_status' => 'publish',
+                );
 
-                                <?php get_template_part( 'template-parts/one-popular-post-card' ); ?>
+                $popular_posts = new WP_Query($args);
 
-                            <?php endwhile; else : ?>
+                if ($popular_posts->have_posts()) : ?>
 
-                                <p>No posts.</p>
-                        </div>
-                
-                <?php endif; ?>
+                    <div class="popular-posts">
+
+                        <?php while( $popular_posts->have_posts() ) : $popular_posts->the_post(); ?>
+
+                            <?php get_template_part( 'template-parts/one-popular-post-card' ); ?>
+
+                        <?php endwhile; else : ?>
+
+                            <p>No posts.</p>
+                    </div>
+                    
+                <?php wp_reset_postdata();
+                    
+                endif; ?>
+
             </article>   
     
         </div>
@@ -58,6 +77,5 @@
     </section>
 
 </main>
-
 
 <?php get_footer(); ?>

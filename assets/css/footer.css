@@ -96,7 +96,7 @@ footer {
     }
     
     .footer__menu-list .menu-item:hover,
-    .footer__menu-list .menu-item.active {
+    .footer__menu-list .menu-item.current-menu-item {
         background-color: #F0E8E7;
         color: #5E5E5B;
     }

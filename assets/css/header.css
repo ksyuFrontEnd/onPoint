@@ -165,7 +165,7 @@
         color: #5E5E5B;
     }
 
-    .menu-item.active {
+    .menu-item.current-menu-item {
         background-color: hsl(0, 0%, 90%);
         color: #5E5E5B;
         z-index: 1;

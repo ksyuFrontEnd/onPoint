@@ -33,6 +33,7 @@
                                 'echo'                 => true,
                                 'depth'                => 0,       
                                 'items_wrap'           => '<ul id="%1$s" class="menu_list %2$s">%3$s</ul>',  
+                                'add_li_class'         => 'menu-item'
                             )); 
                         ?>
                     </nav>

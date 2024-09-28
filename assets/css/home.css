@@ -1,6 +1,9 @@
-/* Latest posts */
 .latest {
     margin: 30px auto;  
+}
+
+.popular {
+    margin: 0 auto 30px;
 }
 
 .latest-posts, .popular-posts {
@@ -16,9 +19,4 @@
         flex-wrap: wrap;
         justify-content: center;
     }
-}
-
-/* Popular posts */
-.popular {
-    margin: 0 auto 30px;
 }
