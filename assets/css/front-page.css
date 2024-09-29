@@ -10,7 +10,7 @@
     padding: 32px 0 0 0;
 }
 
-.last-posts-section {
+.latest-posts-section {
     padding-top: 70px;
 }
 
@@ -24,12 +24,13 @@
     padding: 0 16px;
 }
 
-.latest {
-    margin: 30px auto;  
+.section-title {
+    font-size: 24px;
+    font-weight: 700;
 }
 
-.popular {
-    margin: 0 auto 30px;
+.latest, .popular {
+    margin: 30px auto;  
 }
 
 .latest-posts, .popular-posts {
@@ -111,7 +112,7 @@
         padding: 56px 0 0 0;
     }
     
-    .last-posts-section {
+    .latest-posts-section {
         padding-top: 70px;
     }
     
@@ -122,6 +123,10 @@
     .container {
         max-width: 1440px;
         padding: 0 32px;
+    }
+
+    .section-title {
+        font-size: 44px;
     }
 
     .latest-posts, .popular-posts {
@@ -149,7 +154,7 @@
         padding: 80px 0 0 0;
     }
     
-    .last-posts-section {
+    .latest-posts-section {
         padding-top: 140px;
     }
     
@@ -162,7 +167,9 @@
         padding: 0;
     }
 
-    .popular {
+    
+
+    /* .popular {
         margin: 0 auto;
-    }
+    } */
 }

@@ -7,7 +7,7 @@ if (function_exists('set_post_views')) {
 ?>
 
 <main class="main">
-    <section class="last-posts-section section" id="latest">
+    <section class="latest-posts-section section" id="latest">
             <div class="container">
                 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 

@@ -3,9 +3,9 @@
 <main class="main">
 
     <!-- Section with 3 latest posts -->
-    <section class="last-posts-section section" id="latest">
+    <section class="latest-posts-section section" id="latest">
         <div class="container">
-
+            <h2 class="latest-posts__title section-title"><?php echo get_post_meta( $post->ID, 'latest-posts__title', true ); ?></h2>
             <article class="latest">
 
                 <?php
@@ -46,7 +46,7 @@
     <!-- Section with 3 most popular posts   -->
     <section class="popular-posts-section section" id="popular">
         <div class="container">
-
+            <h2 class="popular-posts__title section-title"><?php echo get_post_meta( $post->ID, 'popular-posts__title', true ); ?></h2>
             <article class="popular">
 
                 <?php
@@ -88,10 +88,11 @@
     </section>
 
 <!-- Section with contact form -->
-    <section class="contact-section section" id="contact-us">
+    <section class="contact-section section" id="contact">
         <div class="container">
             <div class="contact__wrapper">
-                <div class="contact__text">Let's keep in touch and open the horizons together!</div>
+                <!-- <div class="contact__text">Let's keep in touch and open the horizons together!</div> -->
+                <p class="contact__text"><?php echo get_post_meta( $post->ID, 'contact__text', true ); ?></p>
                 <form class="contact__form" id="contact-form">
                     <div class="form__body">
                         <div class="form__input">
