@@ -2,7 +2,7 @@
 
 <main class="main">
 
-    <section class="last-posts-section section">
+    <section class="latest-posts-section section">
         <div class="container">
             <?php echo 'This is index.php'; ?>
         </div>

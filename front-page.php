@@ -87,11 +87,10 @@
         </div>
     </section>
 
-<!-- Section with contact form -->
+    <!-- Section with contact form -->
     <section class="contact-section section" id="contact">
         <div class="container">
             <div class="contact__wrapper">
-                <!-- <div class="contact__text">Let's keep in touch and open the horizons together!</div> -->
                 <p class="contact__text"><?php echo get_post_meta( $post->ID, 'contact__text', true ); ?></p>
                 <form class="contact__form" id="contact-form">
                     <div class="form__body">

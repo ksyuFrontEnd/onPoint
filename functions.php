@@ -23,9 +23,9 @@ if( !function_exists( 'onpoint_setup' )) {
 
 /* Enqueue scripts, styles and fonts */
 function onpoint_scripts() {
-    wp_enqueue_script('jquery');
     wp_enqueue_style( 'main', get_stylesheet_uri () );
     wp_enqueue_style( 'onpoint-style', get_template_directory_uri() . '/assets/css/front-page.css', array('main') );
+    wp_enqueue_script('jquery');
     wp_enqueue_script( 'onpoint-scripts', get_template_directory_uri() . '/assets/js/front-page.js', array(), false, true );
     wp_enqueue_script( 'header-scripts', get_template_directory_uri() . '/assets/js/header.js', array(), false, true );
     wp_enqueue_script( 'footer-scripts', get_template_directory_uri() . '/assets/js/footer.js', array(), false, true );
