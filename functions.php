@@ -111,7 +111,7 @@ function set_post_views($postID) {
 /* Delete views saved during caching */
 remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
 
-/* Create table for emails in database */
+/* Create table for saving emails in database */
 function create_emails_table() {
     global $wpdb;
     $table_name = $wpdb->prefix . 'contact_emails';
@@ -131,6 +131,7 @@ function create_emails_table() {
 
 add_action('after_switch_theme', 'create_emails_table');
 
+/* Process email AJAX request  */
 function save_contact_email() {
     check_ajax_referer('onpoint_nonce', 'nonce');
 
@@ -140,7 +141,7 @@ function save_contact_email() {
     $email = isset($_POST['email']) ? sanitize_email($_POST['email']) : '';
 
     if (!is_email($email)) {
-        wp_send_json_error(['message' => 'Invalid format of email']);
+        wp_send_json_error(['message' => "The email format is incorrect.\nDon't worry! Try again!"]);
     }
 
     /* Insert email into database */
@@ -149,37 +150,38 @@ function save_contact_email() {
         ['email' => $email]
     );
 
-    wp_send_json_success(['message' => 'Email saved successfully']);
+    wp_send_json_success(['message' => "Thank you!\nWe will contact you as soon as possible!\nHave a nice day!"]);
 }
 
 add_action('wp_ajax_save_contact_email', 'save_contact_email');
 add_action('wp_ajax_nopriv_save_contact_email', 'save_contact_email');
 
-
+/* Create new page in dashboard for displaying saved emails */
 function register_emails_page() {
     add_menu_page(
-        'Список емейлів',
-        'Емейли',
+        'Emails list',
+        'Emails',
         'manage_options',
         'emails-list',
         'display_emails_list',
         'dashicons-email',
-        6
+        30
     );
 }
 
 add_action('admin_menu', 'register_emails_page');
 
+/* Display a table with saved information (id, email, date) in dashboard */
 function display_emails_list() {
     global $wpdb;
     $table_name = $wpdb->prefix . 'contact_emails';
     $results = $wpdb->get_results("SELECT * FROM $table_name ORDER BY submitted_at DESC");
 
-    echo '<div class="wrap"><h1>Збережені емейли</h1>';
+    echo '<div class="wrap"><h1>Saved emails</h1>';
     
     if (!empty($results)) {
         echo '<table class="wp-list-table widefat fixed striped">';
-        echo '<thead><tr><th>ID</th><th>Email</th><th>Дата відправлення</th></tr></thead>';
+        echo '<thead><tr><th>ID</th><th>Email</th><th>The date the email was sent</th></tr></thead>';
         echo '<tbody>';
         foreach ($results as $row) {
             echo '<tr>';
@@ -191,7 +193,7 @@ function display_emails_list() {
         echo '</tbody>';
         echo '</table>';
     } else {
-        echo '<p>Немає збережених емейлів.</p>';
+        echo '<p>No emails saved.</p>';
     }
 
     echo '</div>';

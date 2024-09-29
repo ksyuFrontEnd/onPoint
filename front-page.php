@@ -1,6 +1,7 @@
 <?php get_header(); ?>
 
 <main class="main">
+
     <!-- Section with 3 latest posts -->
     <section class="last-posts-section section" id="latest">
         <div class="container">
@@ -25,11 +26,15 @@
                         
                             <?php get_template_part( 'template-parts/one-latest-post-card' ); ?>
 
-                        <?php endwhile; else : ?>
+                        <?php endwhile; ?>
 
-                            <p>No posts.</p>
+                    </div>   
 
-                    </div>
+                    <?php wp_reset_postdata();   
+                        
+                else : ?>
+
+                    <p>No posts.</p>   
 
                 <?php endif; ?>
 
@@ -65,14 +70,17 @@
 
                             <?php get_template_part( 'template-parts/one-popular-post-card' ); ?>
 
-                        <?php endwhile; else : ?>
+                        <?php endwhile; ?>
 
-                            <p>No posts.</p>
-                    </div>
-                    
-                <?php wp_reset_postdata();
-                    
-                endif; ?>
+                    </div>   
+
+                    <?php wp_reset_postdata();   
+                        
+                else : ?>
+
+                    <p>No posts.</p>   
+
+                <?php endif; ?>
 
             </article>   
     
@@ -80,12 +88,21 @@
     </section>
 
 <!-- Section with contact form -->
-    <section class="contact-form-section section" id="contact-us">
+    <section class="contact-section section" id="contact-us">
         <div class="container">
-            <form id="contact-form">
-                <input type="email" id="email" name="email" required placeholder="Your email">
-                <button type="submit">Submit</button>
-            </form>
+            <div class="contact__wrapper">
+                <div class="contact__text">Let's keep in touch and open the horizons together!</div>
+                <form class="contact__form" id="contact-form">
+                    <div class="form__body">
+                        <div class="form__input">
+                            <input type="email" id="email" name="email" class="form__input-field" placeholder="Your email*" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="form__button contact-me-btn">
+                            Contact me
+                    </button>
+                </form>
+            </div>
         </div>
     </section>
 

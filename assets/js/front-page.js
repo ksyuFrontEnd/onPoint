@@ -1,7 +1,8 @@
+// Ajax request to submit contact form
 jQuery(document).ready(function($) {
     $('#contact-form').on('submit', function(e) {
         e.preventDefault();
-        var email = $('#email').val();
+        let email = $('#email').val();
 
         $.ajax({
             url: myAjax.ajaxUrl,
