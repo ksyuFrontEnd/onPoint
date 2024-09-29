@@ -15,7 +15,7 @@ if( !function_exists( 'onpoint_setup' )) {
 
         add_theme_support( 'title-tag' );
         add_theme_support( 'post-thumbnails' );
-        add_image_size( 'mobile-size', 765, 345, true );
+        add_image_size( 'mobile-size', 765, 500, true );
     }
 
     add_action( 'after_setup_theme', 'onpoint_setup' );

@@ -99,12 +99,10 @@
 }
 
 .form__button:hover {
-    border: 1px solid #F0E8E7;
     background-color: #F0E8E7;
 }
 
 .form__button:active {
-    border: 1px solid #b2d3d3;
     background-color: #b2d3d3;
 }
 
