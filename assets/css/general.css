@@ -23,12 +23,6 @@ body {
     scroll-padding-top: 70px;
 }
 
-@media screen and (min-width: 1440px) {
-    html, body {
-        scroll-padding-top: 0;
-    }
-}
-
 body {
     margin: 0;
 }
